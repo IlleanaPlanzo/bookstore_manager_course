@@ -2,6 +2,7 @@ package com.illeanaplanzo.bookstoremanager.service;
 
 import com.illeanaplanzo.bookstoremanager.dto.BookDTO;
 import com.illeanaplanzo.bookstoremanager.entity.Book;
+import com.illeanaplanzo.bookstoremanager.exception.BookNotFoundException;
 import com.illeanaplanzo.bookstoremanager.repository.BookRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -25,7 +26,7 @@ public class BookServiceTest {
     private BookService bookService;
 
     @Test
-    void whenGivenExistingIdThenReturnThisBook() {
+    void whenGivenExistingIdThenReturnThisBook() throws BookNotFoundException {
 
         Book expectedFoundBook = createFakeBook();
 
